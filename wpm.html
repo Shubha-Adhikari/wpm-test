@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSF - WPM test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="wpm.css">
+</head>
+
+<body class="body dark">
+    <div id="window-unfocus">
+        <h1 class="focus-text"><i style="color: #8a15ff;" class="fa-solid fa-arrow-pointer"></i> Click to Start</h1>
+    </div>
+    <div class="top-nav topnav-dark">
+        <div class="top-nav-brand d-flex">
+            <h1 class="main-heading ms-auto">Super Typing <span class="span-c">X</span></h1>
+            <button class="btn-nav btn-nav-dark ms-auto"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        </div>
+    </div>
+    <div class="result-cont container my-5 py-5 hidden">̥
+        <div class="row mb-5 pb-5">
+            <div class="col-md-6 m-auto">
+                <div class="result-holder result-holder-dark">
+                    <div class="result-top result-top-dark d-flex ">
+                        <h1 class="ms-5 text-light">Result</h1>
+                        <button class="share-btn btn ms-auto"><i class="fa-solid fa-share"></i> Share</button>
+                    </div>
+                    <div class="result-badge d-flex">
+                        <p class="mb-0 p-2">Top 1% : Professional typer</p>
+                    </div>
+                    <div class="result-body-wpm result-body-wpm-dark">
+                        <h1 id="result-wpm" class="text-center"><b id="Rwpm" class="span-c">60</b> WPM</h1>
+                    </div>
+                    <div class="result-body-bottom result-body-bottom-dark">
+                        <div class="info accuracy-info">
+
+                            <h4>Accuracy: <b id="accuracy" class="span-c"></b></h4>
+                        </div>
+                        <div class="info">
+
+                            <h4>Correct keys Pressed: <b id="resultCpm" class="span-c"></b></h4>
+                        </div>
+                        <div class="info">
+
+                            <h4>Wrong Keys Pressed: <b id="Rwrong" class="span-c"></b></h4>
+                        </div>
+                        <div class="info">
+
+                            <h4>Mistakes: <b id="Rmis" class="span-c"></b></h4>
+                        </div>
+                        <div class="info">
+
+                            <h4>KeyStrokes: <b id="keystroke" class="span-c"></b></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex mt-5">
+
+                    <button class="btn-again btn-again-dark btn btn-lg m-auto"><i class="fa-solid fa-rotate-right"></i>
+                        Try
+                        Again</button>
+                </div>
+            </div>
+        </div>
+        <div class="row table-row">
+            <table class="table fs-4">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col">SN.</th>
+                        <th scope="col">WPM</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Less than 40WPM</td>
+                        <td>Below Average</td>
+                        <td>Make sure to use all 10 fingers!</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>40WPM-55WPM</td>
+                        <td>Average WPM</td>
+                        <td>Focus on your accuracy and speed!</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>60WPM-80WPM</td>
+                        <td>Professional Typist</td>
+                        <td>Use CTRL+BACKSPACE to erase words and aim for 90% + accuracy. </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>120WPM +</td>
+                        <td>Top 1%</td>
+                        <td>Just maintain consistancy!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="window add-blur">
+        <div id="interface" class="main-container">
+            <div class="top top-dark">
+                <p class="seconds top-info"></p>
+                <p class="top-info">WPM: <b class="wpm span-c"></b> </p>
+                <p class="top-info">Mistakes: <b class="mistakes span-c"></b> </p>
+                <!-- Button trigger modal -->
+                <button class="btn-setting btn-dark-mode" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content modal-content-dark">
+                            <div class="modal-header">
+
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"> <span class="span"><i
+                                            class="fa-solid fa-sliders">
+                                        </i></span> Settings</h1>
+                                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mb-4">
+
+                                    <div class="col-md-6">
+                                        <p class="fs-5"><b>Time:</b></p>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                60 Seconds
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                30 Seconds
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                15 Seconds
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <p class="fs-5"><b>Cursor:</b></p>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Line
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Underscore
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Block
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <p class="fs-5"><b>Level:</b></p>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Easy <span class="span-c">(All lowercase, no numeric characters)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Normal <span class="span-c">(Contains uppercase characters)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Hard <span class="span-c">(Contains numeric & fancy characters)</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="radio form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Custom <span class="span-c">(Contains numeric characters
+                                                    only)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer modal-footer-dark">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="interface-body">
+
+                <p class="words">
+                </p>
+                <button class="btn btn-reload btn-reload-dark hidden"><i class="fa-solid fa-rotate"></i></button>
+                <div class="input-cont">
+                    <textarea name="" id="input-field" class="text"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+<script src="variables.js"></script>
+<script src="wordlist.js"></script>
+<script src="wpm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+</script>
+
+</html>

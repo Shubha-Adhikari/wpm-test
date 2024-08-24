@@ -1,0 +1,354 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+#window-unfocus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.add-blur{
+    filter: blur(4px);
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+}
+
+.focus-text{
+    font-weight: 500;
+}
+::selection{
+    background: #8a15ff;
+    color: white;
+}
+
+.top-nav{
+    padding: 1em;
+    background: rgb(252, 252, 252);
+    box-shadow: rgb(128, 128, 128) 0 0 2px;
+}
+.topnav-dark{
+    background: #1a0f2d !important;
+    box-shadow: rgb(128, 128, 128) 0 0 2px !important;
+    box-shadow: #8000ff45 0 0 5em !important;
+
+}
+.dark{
+    background: #150c25 !important;
+    color: #f2e6ff !important;
+}
+.btn-nav{
+    border: none;
+    box-shadow: #8000ff 0 0 2px;
+    outline: none;
+    color: #8000ff;
+    font-size: 1.75em;
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    margin-right: 1em;
+    background: none;
+}
+.btn-nav-dark{
+    box-shadow: #8000ff 0 0 7px !important;
+}
+.btn-nav:hover{
+    background: #e6e6e6;
+}
+.btn-nav-dark:hover{
+    background: #2a1849;
+}
+.main-container{
+    padding: 5em 20em;  
+}
+
+.main-heading{
+    text-align: center;
+}
+
+.wpm-interface{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.btn-reload{
+    min-width: 4em;
+    border-radius: 1em;
+    min-height: 3em;
+    background: rgb(252, 252, 252);
+    color: #8a15ff;
+    border: none;
+    box-shadow: rgb(120, 120, 120) 0 0 2px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 600;
+    margin: 2em 0;
+    position: relative;
+    left: 45%;
+}
+.btn-reload-dark{
+    background: #150c25 !important;
+    box-shadow: #8000ff 0 0 7px !important;
+
+}
+.btn-dark-mode{
+    background:#1a0f2d!important;
+    color: #f2e6ff !important;
+}
+.btn{
+    background: rgb(252, 252, 252);
+    color: #8a15ff;
+    border: none;
+    box-shadow: rgb(120, 120, 120) 0 0 2px;
+
+}
+
+.btn:hover{
+    background: rgb(246, 241, 253);
+    color: #8a15ff;
+
+
+}
+
+.btn-reload:hover{
+    background: rgb(246, 241, 253);
+}
+
+.btn-setting{
+    min-width: 4em;
+    border-radius: 1em;
+    min-height: 3em;
+    background: rgb(252, 252, 252);
+    color: #8a15ff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.correct{
+    color: #7909ea;
+}
+.incorrect{
+    color: #cb3439;
+    background: #ff3d5d39;
+    border-radius: 0;
+}
+
+p span{
+    position: relative;
+}
+p span.active{
+    color: #9f7ac791;
+} 
+.word{
+    display: inline;
+    position: relative;
+    font-size: 1em;
+    line-height: 1em;
+}
+p span.active::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    border-radius: 1em;
+    height: 1.4em;
+    width: 4px;
+    background: #8a15ff;
+    justify-content: space-between;
+    opacity: 0;
+    animation: blink 1s ease-in-out infinite;
+}
+p span.underscore::before{
+    position: absolute;
+    content: ""; 
+    height: 4px !important;
+    width: 100% !important;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+.modal{
+    background: rgba(35, 0, 73, 0.262);
+}
+
+.modal-header{
+    background: rgb(252, 252, 252);
+    border: none;
+    box-shadow: rgb(120, 120, 120) 0 0 2px;
+
+}
+
+.span-c{
+    color: #8000ff;
+}
+
+.hidden{
+    display: none;
+}
+
+.radio {
+    cursor: pointer;
+    box-shadow: rgb(159, 159, 159) 0 0 5px;
+
+}
+
+.radio:checked {
+    background-color: #8a15ff;
+    border: none;
+}
+
+.form-check-label{
+    font-size: .75em;
+    margin: 0;
+    padding: 0;
+}
+
+.radio:focus {
+    box-shadow: 0 0 0 .25rem rgba(144, 25, 255, 0.25);
+}
+
+.top{
+    background: rgb(252, 252, 252);
+    box-shadow: rgb(120, 120, 120) 0 0 2px;
+    margin-bottom: 2em;
+    padding: .2em;
+    font-size: 1.5em;
+    color: #48266a;
+    display: flex;
+}
+
+.top-dark{
+    background: #1a0f2d !important;
+    box-shadow: #8000ff 0 0 7px !important;
+    color: #f2e6ff !important;
+}
+
+.top-info{
+    margin: auto;
+}
+
+.words{
+    font-size: 2em;
+    word-spacing: normal;
+    line-height: 1.5em;
+    color: #9f7ac791;
+    font-weight: 500;
+}
+#input-field{
+position: absolute;
+top: 19em;
+opacity: 0;
+}
+#interface{
+    z-index: -2;
+}
+.modal-content-dark{
+    background: #1a0f2d !important;
+}
+.modal-content{
+    background: #f8f0ff;
+    border: none;
+}
+.modal-header{
+    background: #8a15ff;
+    color: #f8f0ff;
+} 
+.modal-footer{
+    background: #f2e6ff;
+}
+.modal-footer-dark{
+    background: #23153b !important;
+}
+.result-cont-dark{
+    color: #f2e6ff !important;
+}
+.result-cont{
+    color: #5d4971;
+    padding: 5em 0;
+}
+.result-holder{
+    box-shadow: rgb(93, 93, 93) 0 0 2px;
+}
+.result-top-dark{
+    background: #3f1f77 !important;
+}
+.result-top{
+    background: #8a15ff;
+    padding: .4em;
+    font-size: 1.5em;
+}
+.result-badge{
+    background: linear-gradient(to bottom right, rgba(255, 213, 87, 0.653), rgba(255, 135, 15, 0.629));
+    font-weight: bold;
+}
+.result-badge p{
+    margin: auto;
+}
+.result-body-wpm-dark{
+    background: #261643 !important;
+    color: #f2e6ff !important;
+}
+.result-body-wpm{
+    padding: 2em 0;
+    box-shadow: rgb(200, 200, 200) 0 0 2px;
+    background: #f8f0ff;
+}
+.result-body-bottom-dark{
+    background: #1a0f2d !important;
+    color: #f2e6ff !important;
+}
+.result-body-bottom{
+    background: rgb(252, 252, 252);
+}
+.result-body-bottom .info{
+    padding: 1em;
+    box-shadow: rgb(200, 200, 200) 0 0 2px;
+}
+#result-wpm{
+    font-size: 3.5em;
+}
+.share-btn{
+    background: none;
+    box-shadow: none;
+    color: #f8f0ff;
+}
+.share-btn:hover{
+    background: none;
+    color: #f8f0ff;
+}
+.btn-again{
+    min-width: 8em;
+    min-height: 3em;
+    font-size: 1.5em;
+}
+.btn-again-dark{
+    background: #1a0f2d !important;
+    box-shadow: #8000ff 0 0 7px !important;
+}
+.table-row{
+    background: rgb(252, 252, 252);
+    box-shadow: #5d4971 0 0 2px;
+    padding: 3em;
+}
+th{
+    background-color: #8000ff !important;
+    color: #f8f0ff !important;
+}
