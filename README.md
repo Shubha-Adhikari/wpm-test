@@ -1,0 +1,1 @@
+This is WPM tester made with HTML 5, CSS 3, Bootstrap 5, and Vanilla JavaScript. Font Awesome was used for icons and Bootstrap liabrary was used for some JS and CSS. This is functional. However, every thing might not work because it is still in beta phase. Thank you! 
